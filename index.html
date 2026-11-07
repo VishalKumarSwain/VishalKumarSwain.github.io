@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vishal Kumar Swain</title>
+<meta name="description" content="Vishal Kumar Swain — PhD researcher at NIT Warangal working on formal methods, neuro-symbolic SMT solving and LLMs for software verification.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#fbfaf7; --surface:#ffffff; --text:#1c1d21; --muted:#5d6068; --line:#e6e3dc;
+  --accent:#2b5bd7; --accent-soft:#e8eefc; --chip:#f2f0eb;
+  --shadow:0 1px 2px rgba(0,0,0,.04),0 8px 24px rgba(0,0,0,.05);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0f1115; --surface:#161920; --text:#e8e9ec; --muted:#9aa0ab; --line:#262a33;
+    --accent:#7da2ff; --accent-soft:#1b2440; --chip:#1d2129;
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.25);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0f1115; --surface:#161920; --text:#e8e9ec; --muted:#9aa0ab; --line:#262a33;
+  --accent:#7da2ff; --accent-soft:#1b2440; --chip:#1d2129;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.25);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font:16px/1.65 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px}
+.mono{font-family:"JetBrains Mono",ui-monospace,monospace}
+
+/* nav */
+nav{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 85%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:16px}
+.brand{font-weight:700;color:var(--text);letter-spacing:-.01em}
+.brand:hover{text-decoration:none}
+.links{display:flex;gap:22px;font-size:14px}
+.links a{color:var(--muted)}
+.links a:hover{color:var(--text);text-decoration:none}
+#theme{background:none;border:1px solid var(--line);color:var(--text);border-radius:8px;width:34px;height:34px;cursor:pointer;font-size:15px}
+
+/* hero */
+.hero{padding:88px 0 64px}
+.tag{display:inline-block;font-size:13px;color:var(--accent);background:var(--accent-soft);padding:4px 12px;border-radius:99px;margin-bottom:20px}
+h1{font-size:clamp(36px,6vw,56px);line-height:1.08;letter-spacing:-.03em;font-weight:700}
+.role{font-size:clamp(18px,2.4vw,22px);color:var(--muted);margin-top:14px;font-weight:500}
+.intro{max-width:680px;margin-top:22px;color:var(--muted)}
+.intro b{color:var(--text);font-weight:600}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:10px;font-size:14px;font-weight:600;border:1px solid var(--line);color:var(--text);background:var(--surface)}
+.btn:hover{text-decoration:none;border-color:var(--accent)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:48px}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px}
+.stat b{display:block;font-size:22px;letter-spacing:-.02em}
+.stat span{font-size:13px;color:var(--muted)}
+
+/* sections */
+section{padding:56px 0;border-top:1px solid var(--line)}
+h2{font-size:13px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);font-weight:600;margin-bottom:28px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:24px;box-shadow:var(--shadow)}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.card h3{font-size:18px;letter-spacing:-.01em;line-height:1.35}
+.venue{font-size:12px;font-weight:600;color:var(--accent);margin-bottom:8px;display:block}
+.card p{color:var(--muted);font-size:15px;margin-top:10px}
+.card.wide{grid-column:1/-1}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.chip{font-size:12px;background:var(--chip);color:var(--muted);padding:3px 9px;border-radius:6px}
+.metric{display:inline-block;font-weight:600;color:var(--text)}
+
+/* timeline */
+.job{display:grid;grid-template-columns:180px 1fr;gap:24px;padding:22px 0;border-bottom:1px dashed var(--line)}
+.job:last-child{border-bottom:0}
+.when{font-size:13px;color:var(--muted);padding-top:3px}
+.job h3{font-size:17px}
+.org{color:var(--accent);font-weight:500;font-size:15px}
+.job ul{margin:10px 0 0 18px;color:var(--muted);font-size:15px}
+.job li{margin-top:6px}
+
+/* skills */
+.skills{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.skills h3{font-size:15px;margin-bottom:4px}
+
+/* pubs / edu */
+.pub{padding-left:16px;border-left:3px solid var(--accent)}
+.pub h3{font-size:16px}
+.pub p{color:var(--muted);font-size:14px;margin-top:6px}
+.edu{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+
+/* contact */
+.contact{text-align:center;padding:72px 0}
+.contact h2{margin-bottom:12px}
+.contact .big{font-size:clamp(24px,4vw,34px);font-weight:700;letter-spacing:-.02em}
+.contact p{color:var(--muted);margin:12px auto 26px;max-width:520px}
+.contact .cta{justify-content:center}
+footer{text-align:center;font-size:13px;color:var(--muted);padding:28px 0 40px;border-top:1px solid var(--line)}
+
+@media (max-width:720px){
+  .links{display:none}
+  .hero{padding:56px 0 40px}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .grid,.skills,.edu{grid-template-columns:1fr}
+  .job{grid-template-columns:1fr;gap:4px}
+  .wrap{padding:0 16px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#">Vishal Kumar Swain</a>
+    <div class="links">
+      <a href="#research">Research</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#publications">Publications</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <button id="theme" aria-label="Toggle dark mode">◐</button>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="tag mono">PhD Researcher · NIT Warangal</span>
+    <h1>Vishal Kumar Swain</h1>
+    <p class="role">Formal Methods &amp; AI for Software Verification</p>
+    <p class="intro">I combine <b>formal methods</b> with <b>machine learning and LLMs</b> — neuro-symbolic SMT solving over bit-vector logic, CBMC-based bounded model checking and MC/DC coverage analysis of safety-critical embedded C/C++, and LLM fine-tuning for coverage-driven test generation. I aim to apply this to formal verification and AI-assisted EDA.</p>
+    <div class="cta">
+      <a class="btn primary" href="mailto:vkswain70@gmail.com">✉ Email me</a>
+      <a class="btn" href="Vishal_Kumar_Swain_CV.pdf" target="_blank">↓ Download CV</a>
+      <a class="btn" href="https://scholar.google.com/citations?user=FwLnpI0AAAAJ&hl=en" target="_blank">Google Scholar</a>
+      <a class="btn" href="https://github.com/VishalKumarSwain" target="_blank">GitHub</a>
+      <a class="btn" href="https://www.linkedin.com/in/vishalkumarswain" target="_blank">LinkedIn</a>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>IEEE ICST</b><span>2026 tool paper</span></div>
+      <div class="stat"><b>SMT-COMP</b><span>2026 solver entry</span></div>
+      <div class="stat"><b>14</b><span>coverage criteria automated</span></div>
+      <div class="stat"><b>9.5</b><span>M.Tech CGPA</span></div>
+    </div>
+  </div>
+</header>
+
+<section id="research">
+  <div class="wrap">
+    <h2>Research &amp; Competitions</h2>
+    <div class="grid">
+      <div class="card">
+        <span class="venue mono">SMT-COMP 2026</span>
+        <h3>NeuroSym: Neuro-Symbolic SMT Solver</h3>
+        <p>Co-developed a solver that combines machine-learned guidance with symbolic SMT reasoning over bit-vectors, with Lucas Cordeiro's group at the University of Manchester. Entered in the International SMT Competition 2026.</p>
+        <div class="chips"><span class="chip">SMT-LIB</span><span class="chip">QF_BV</span><span class="chip">Neuro-Symbolic</span><span class="chip">PyTorch</span></div>
+      </div>
+      <div class="card">
+        <span class="venue mono">IEEE ICST 2026</span>
+        <h3>KSERESNET: Test Prioritization for Self-Driving Cars</h3>
+        <p>An SE-attention 1D-ResNet that ranks simulation-based test cases from road-waypoint kinematics — <span class="metric">APFD 0.62</span> vs. 0.50 for random ordering, with a <span class="metric">100%</span> completion rate across 400 configurations.</p>
+        <div class="chips"><span class="chip">Deep Learning</span><span class="chip">ResNet</span><span class="chip">Autonomous Driving</span></div>
+      </div>
+      <div class="card wide">
+        <span class="venue mono">Ongoing research</span>
+        <h3>LLM-Driven Test Generation for Coverage Closure</h3>
+        <p>Benchmarked <span class="metric">7 LLMs on 42 programs</span> (coverage, mutation score, cost, latency, hallucination rate) and tested generalization on <span class="metric">65 GNU Coreutils</span> programs. LoRA-fine-tuned StarCoder2-7B and fixed a severe post-fine-tuning drop with a chat-format-aligned training strategy. Built a coverage-guided feedback loop that finds uncovered branches after each round and re-targets them.</p>
+        <div class="chips"><span class="chip">StarCoder2</span><span class="chip">LoRA / PEFT</span><span class="chip">Hugging Face</span><span class="chip">Mutation Testing</span><span class="chip">vLLM</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <h2>Experience</h2>
+    <div class="job">
+      <div class="when mono">Jun 2026 – Present</div>
+      <div>
+        <h3>Junior Research Fellow — Formal Software Verification</h3>
+        <div class="org">DRDO</div>
+        <ul>
+          <li>Built an automated CBMC-based formal coverage pipeline covering 14 criteria, including MC/DC and mutation testing, with auto-instrumentation, verification-harness synthesis and a Python GUI.</li>
+          <li>Cut peak memory from 12–16 GB to ~4 GB by restructuring bounded model checking into per-file analysis with retry logic, removing out-of-memory failures on large codebases.</li>
+          <li>Led formal verification of safety-critical embedded C/C++ software, designing per-file stubbing strategies to verify tightly coupled modules in isolation.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="job">
+      <div class="when mono">Aug 2025 – May 2026</div>
+      <div>
+        <h3>Junior Research Fellow</h3>
+        <div class="org">NIT Warangal</div>
+        <ul>
+          <li>Contributed to TrustInn, a multi-language verification framework (bounded model checking, KLEEMA, KLEE-TX symbolic execution) for C, Java, Python, Rust and Solidity.</li>
+          <li>Built GAN- and LLM-based test-generation modules to maximize branch and line coverage, and containerized the tool with Docker.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="job">
+      <div class="when mono">Jul 2023 – Jan 2025</div>
+      <div>
+        <h3>Lecturer &amp; Teaching Assistant</h3>
+        <div class="org">GIET University, Gunupur</div>
+        <ul><li>Taught core CS lectures and labs; mentored final-year ML and software capstone projects.</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <h2>Skills</h2>
+    <div class="skills">
+      <div class="card"><h3>Formal Methods</h3><div class="chips"><span class="chip">CBMC</span><span class="chip">Bounded Model Checking</span><span class="chip">SMT (SMT-LIB, QF_BV)</span><span class="chip">KLEE</span><span class="chip">Tracer-X</span><span class="chip">KLEEMA</span><span class="chip">MC/DC</span><span class="chip">Mutation Testing</span><span class="chip">AFL Fuzzing</span></div></div>
+      <div class="card"><h3>AI &amp; ML</h3><div class="chips"><span class="chip">PyTorch</span><span class="chip">TensorFlow</span><span class="chip">Scikit-learn</span><span class="chip">Neuro-Symbolic Reasoning</span><span class="chip">GANs</span><span class="chip">Learning to Rank</span></div></div>
+      <div class="card"><h3>LLM Engineering</h3><div class="chips"><span class="chip">Hugging Face</span><span class="chip">PEFT / LoRA</span><span class="chip">TRL</span><span class="chip">vLLM</span><span class="chip">Ollama</span><span class="chip">LM Eval Harness</span><span class="chip">OpenAI / Anthropic APIs</span></div></div>
+      <div class="card"><h3>Languages &amp; Tools</h3><div class="chips"><span class="chip">Python</span><span class="chip">C</span><span class="chip">C++</span><span class="chip">Rust</span><span class="chip">SQL</span><span class="chip">Solidity</span><span class="chip">Docker</span><span class="chip">Git</span><span class="chip">Linux</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="publications">
+  <div class="wrap">
+    <h2>Publications</h2>
+    <div class="pub">
+      <h3>KSERESNET at the ICST 2026 Tool Competition: Self-Driving Car Testing Track</h3>
+      <p>Tool Paper · 19th IEEE International Conference on Software Testing, Verification and Validation (ICST 2026), Daejeon, South Korea · IEEE Xplore</p>
+    </div>
+    <p style="margin-top:18px;font-size:14px;color:var(--muted)">Full list on <a href="https://scholar.google.com/citations?user=FwLnpI0AAAAJ&hl=en" target="_blank">Google Scholar</a>.</p>
+  </div>
+</section>
+
+<section id="education">
+  <div class="wrap">
+    <h2>Education</h2>
+    <div class="edu">
+      <div class="card"><span class="venue mono">Aug 2025 – Present</span><h3>PhD in Computer Science</h3><p>Software Testing &amp; Verification · NIT Warangal</p></div>
+      <div class="card"><span class="venue mono">2025 · CGPA 9.5 / 10</span><h3>M.Tech in Computer Science</h3><p>GIET University</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap">
+    <h2>Contact</h2>
+    <div class="big">Let's work on verification together.</div>
+    <p>Open to research collaborations in formal methods, AI for verification and AI-assisted EDA.</p>
+    <div class="cta">
+      <a class="btn primary" href="mailto:vkswain70@gmail.com">vkswain70@gmail.com</a>
+      <a class="btn" href="https://www.linkedin.com/in/vishalkumarswain" target="_blank">LinkedIn</a>
+      <a class="btn" href="https://scholar.google.com/citations?user=FwLnpI0AAAAJ&hl=en" target="_blank">Scholar</a>
+    </div>
+  </div>
+</section>
+
+<footer>© 2026 Vishal Kumar Swain · NIT Warangal, Telangana</footer>
+
+<script>
+const b = document.getElementById('theme'), r = document.documentElement;
+try { const t = localStorage.getItem('theme'); if (t) r.dataset.theme = t; } catch (e) {}
+b.onclick = () => {
+  const dark = r.dataset.theme ? r.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+  r.dataset.theme = dark ? 'light' : 'dark';
+  try { localStorage.setItem('theme', r.dataset.theme); } catch (e) {}
+};
+</script>
+</body>
+</html>
